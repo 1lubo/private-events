@@ -3,33 +3,30 @@
 <% if @events.empty? %>
     <div>User currently doesn't have any created events </div>
 <% else %>
-    <% @events.each do |e| %>
-    <div class="container">
-        <div class="title">
-            <strong>Title: </strong>
-            <%= e.name %>
+    <div class="events-container">
+        
+        <% @events.each do |e| %>
+        <div class="event">
+            <div class="title">
+                <strong>Title: </strong>
+                <%= e.name %>
+            </div>
+            <div class="date">
+                <strong>Date: </strong>
+                <%= e.date %>
+            </div>
+            <div class="location">
+                <strong>Location: </strong>
+                <%= e.location %>
+            </div>
+            
+            <div class="show-event">
+                <%= link_to 'Show Event', event_path(e) %>
+            </div>
         </div>
-        <div class="date">
-            <strong>Date: </strong>
-            <%= e.date %>
-        </div>
-        <div class="location">
-            <strong>Location: </strong>
-            <%= e.location %>
-        </div>    
-        <div class="attendees">
-            <strong>Attendees: </strong>
-            <% if !e.attendees.empty? %>
-                <% e.attendees.each do |a| %>
-                    <%= a.name %>
-                <% end %>
-            <% end %>
-        </div>
+        
+        <% end %>
     </div>
-    <div class="show-event">
-        <%= link_to 'Show Event', event_path(e) %>
-    </div>
-    <% end %>
 <% end %>
 
 <h1>Events attended by <%= @user.name %> </h1>
@@ -37,19 +34,21 @@
 <% if @user.attended_events.empty? %>
     <div>User currently doesn't attend any events</div>
 <% else %>
-    <% @user.attended_events.each do |ae|%>
-        <div class="container">
-            <div class="title">
-                <%= ae.name %>
+    <div class="events-container">
+        <% @user.attended_events.each do |ae|%>
+            <div class="event">
+                <div class="title">
+                    <%= ae.name %>
+                </div>
+                <div class="creator">
+                    <%= ae.creator.name %>
+                </div>
+                <div class="show-event">
+                    <%= link_to 'Show Event', event_path(ae) %>
+                </div>
             </div>
-            <div class="creator">
-                <%= ae.creator.name %>
-            </div>
-            <div class="show-event">
-                <%= link_to 'Show Event', event_path(ae) %>
-            </div>
-        </div>
-    <% end %>
+        <% end %>
+    </div>
 <% end %>
 
 <%= link_to 'Back', root_path%>

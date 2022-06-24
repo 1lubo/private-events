@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'login' => 'sessions#new', as: 'login'
   get 'logout' => 'sessions#destroy', as: 'logout'
 
-  resources :users, only: :show
+  resources :users, only: %i[show new create]
   resources :sessions, only: %i[new create destroy]
   resources :events do
     member do

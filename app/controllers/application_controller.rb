@@ -5,7 +5,8 @@ class ApplicationController < ActionController::Base
 
   def require_login
     unless current_user
-      redirect_to login_path, alert: 'Sign up or Log in to see the events!'
+      flash[:notice] = 'Sign up or Log in to see the events!'
+      redirect_to login_path
     end
   end
 

@@ -1,0 +1,201 @@
+* {
+    font-family: -apple-system, BlinkMacSystemFont, "San Francisco", Helvetica, Arial, sans-serif;
+  font-weight:  300; 
+  
+}
+/* navbar */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(9, 67, 145);
+  }
+  
+  .navbar-link-home {
+    float: left;
+  }
+
+  .navbar-link {
+    float: right
+  }
+
+  a{
+    text-decoration: none;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;    
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  li a:hover {
+    background-color: rgb(73, 84, 189);
+  }
+
+  /* The alert message box */
+.alert {
+    padding: 20px;   
+    margin-bottom: 15px;
+    color: white;    
+  }
+
+.alert.danger {
+    background-color: #dd2d20; /* Red */    
+}
+
+.alert.success {
+    background-color: rgb(32, 145, 32)
+}
+
+.alert.notice {
+    background-color: rgb(214, 187, 36);
+    color: black;
+}
+
+.section {
+    display: flex;
+    justify-content: center;
+}
+
+.login-form-container, .sign-up-form-container{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 5rem;    
+    border-radius: 6px;
+    
+}
+
+.login-form-container {
+    box-shadow: 5px 5px #39219745;
+}
+
+.sign-up-form-container {
+    box-shadow: -5px 5px #39219745;
+}
+
+h4 {
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+p {
+    line-height:  155%; 
+    margin-bottom:  5px; 
+    font-size:  14px; 
+    color:  #000; 
+    opacity:  .65;
+    font-weight:  400; 
+    max-width:  200px; 
+    margin-bottom:  40px; 
+  }
+
+.login-form, 
+.sign-up-form {
+    padding:  40px 30px;
+    display:  flex; 
+    flex-direction:  column;
+    align-items:  flex-start; 
+  
+}
+
+.left {
+    width: 220px;
+    height: 400px;
+    min-height: 100%;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='220' height='400' preserveAspectRatio='none' viewBox='0 0 220 400'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1069%26quot%3b)' fill='none'%3e%3crect width='220' height='400' x='0' y='0' fill='%230e2a47'%3e%3c/rect%3e%3cg mask='url(%26quot%3b%23SvgjsMask1070%26quot%3b)'%3e%3cpath d='M80 336L80 400' stroke-width='5.33' stroke='rgba(24%2c 110%2c 197%2c 1)'%3e%3c/path%3e%3cpath d='M72 336 a8 8 0 1 0 16 0 a8 8 0 1 0 -16 0zM72 400 a8 8 0 1 0 16 0 a8 8 0 1 0 -16 0z' fill='rgba(24%2c 110%2c 197%2c 1)'%3e%3c/path%3e%3cpath d='M48 368L16 336L16 16' stroke-width='5.33' stroke='rgba(24%2c 110%2c 197%2c 1)'%3e%3c/path%3e%3cpath d='M40 368 a8 8 0 1 0 16 0 a8 8 0 1 0 -16 0zM8 16 a8 8 0 1 0 16 0 a8 8 0 1 0 -16 0z' fill='rgba(24%2c 110%2c 197%2c 1)'%3e%3c/path%3e%3cpath d='M112 304L112 368' stroke-width='5.33' stroke='rgba(24%2c 110%2c 197%2c 1)'%3e%3c/path%3e%3cpath d='M104 304 a8 8 0 1 0 16 0 a8 8 0 1 0 -16 0zM104 368 a8 8 0 1 0 16 0 a8 8 0 1 0 -16 0z' fill='rgba(24%2c 110%2c 197%2c 1)'%3e%3c/path%3e%3cpath d='M112 80L48 80' stroke-width='5.33' stroke='rgba(24%2c 110%2c 197%2c 1)'%3e%3c/path%3e%3cpath d='M104 80 a8 8 0 1 0 16 0 a8 8 0 1 0 -16 0zM40 80 a8 8 0 1 0 16 0 a8 8 0 1 0 -16 0z' fill='rgba(24%2c 110%2c 197%2c 1)'%3e%3c/path%3e%3cpath d='M112 272L48 272' stroke-width='5.33' stroke='rgba(24%2c 110%2c 197%2c 1)'%3e%3c/path%3e%3cpath d='M104 272 a8 8 0 1 0 16 0 a8 8 0 1 0 -16 0zM40 272 a8 8 0 1 0 16 0 a8 8 0 1 0 -16 0z' fill='rgba(24%2c 110%2c 197%2c 1)'%3e%3c/path%3e%3cpath d='M176 16L144 48L48 48' stroke-width='5.33' stroke='rgba(24%2c 110%2c 197%2c 1)'%3e%3c/path%3e%3cpath d='M168 16 a8 8 0 1 0 16 0 a8 8 0 1 0 -16 0zM40 48 a8 8 0 1 0 16 0 a8 8 0 1 0 -16 0z' fill='rgba(24%2c 110%2c 197%2c 1)'%3e%3c/path%3e%3cpath d='M144 304L144 368L176 400L208 400' stroke-width='5.33' stroke='rgba(24%2c 110%2c 197%2c 1)'%3e%3c/path%3e%3cpath d='M136 304 a8 8 0 1 0 16 0 a8 8 0 1 0 -16 0zM200 400 a8 8 0 1 0 16 0 a8 8 0 1 0 -16 0z' fill='rgba(24%2c 110%2c 197%2c 1)'%3e%3c/path%3e%3cpath d='M176 112L176 48L208 16' stroke-width='5.33' stroke='rgba(24%2c 110%2c 197%2c 1)'%3e%3c/path%3e%3cpath d='M168 112 a8 8 0 1 0 16 0 a8 8 0 1 0 -16 0zM200 16 a8 8 0 1 0 16 0 a8 8 0 1 0 -16 0z' fill='rgba(24%2c 110%2c 197%2c 1)'%3e%3c/path%3e%3cpath d='M144 112L48 112' stroke-width='5.33' stroke='rgba(24%2c 110%2c 197%2c 1)'%3e%3c/path%3e%3cpath d='M136 112 a8 8 0 1 0 16 0 a8 8 0 1 0 -16 0zM40 112 a8 8 0 1 0 16 0 a8 8 0 1 0 -16 0z' fill='rgba(24%2c 110%2c 197%2c 1)'%3e%3c/path%3e%3cpath d='M208 272L80 144L48 144' stroke-width='5.33' stroke='rgba(24%2c 110%2c 197%2c 1)'%3e%3c/path%3e%3cpath d='M200 272 a8 8 0 1 0 16 0 a8 8 0 1 0 -16 0zM40 144 a8 8 0 1 0 16 0 a8 8 0 1 0 -16 0z' fill='rgba(24%2c 110%2c 197%2c 1)'%3e%3c/path%3e%3cpath d='M112 240L144 272L176 272L208 304' stroke-width='5.33' stroke='rgba(24%2c 110%2c 197%2c 1)'%3e%3c/path%3e%3cpath d='M104 240 a8 8 0 1 0 16 0 a8 8 0 1 0 -16 0zM200 304 a8 8 0 1 0 16 0 a8 8 0 1 0 -16 0z' fill='rgba(24%2c 110%2c 197%2c 1)'%3e%3c/path%3e%3cpath d='M144 16L80 16' stroke-width='5.33' stroke='rgba(24%2c 110%2c 197%2c 1)'%3e%3c/path%3e%3cpath d='M136 16 a8 8 0 1 0 16 0 a8 8 0 1 0 -16 0zM72 16 a8 8 0 1 0 16 0 a8 8 0 1 0 -16 0z' fill='rgba(24%2c 110%2c 197%2c 1)'%3e%3c/path%3e%3cpath d='M208 176L144 176L112 144' stroke-width='5.33' stroke='rgba(24%2c 110%2c 197%2c 1)'%3e%3c/path%3e%3cpath d='M200 176 a8 8 0 1 0 16 0 a8 8 0 1 0 -16 0zM104 144 a8 8 0 1 0 16 0 a8 8 0 1 0 -16 0z' fill='rgba(24%2c 110%2c 197%2c 1)'%3e%3c/path%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1069'%3e%3crect width='220' height='400' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cmask id='SvgjsMask1070'%3e%3crect width='220' height='400' fill='white'%3e%3c/rect%3e%3cpath d='M76 336 a4 4 0 1 0 8 0 a4 4 0 1 0 -8 0zM76 400 a4 4 0 1 0 8 0 a4 4 0 1 0 -8 0z' fill='black'%3e%3c/path%3e%3cpath d='M44 368 a4 4 0 1 0 8 0 a4 4 0 1 0 -8 0zM12 16 a4 4 0 1 0 8 0 a4 4 0 1 0 -8 0z' fill='black'%3e%3c/path%3e%3cpath d='M108 304 a4 4 0 1 0 8 0 a4 4 0 1 0 -8 0zM108 368 a4 4 0 1 0 8 0 a4 4 0 1 0 -8 0z' fill='black'%3e%3c/path%3e%3cpath d='M108 80 a4 4 0 1 0 8 0 a4 4 0 1 0 -8 0zM44 80 a4 4 0 1 0 8 0 a4 4 0 1 0 -8 0z' fill='black'%3e%3c/path%3e%3cpath d='M108 272 a4 4 0 1 0 8 0 a4 4 0 1 0 -8 0zM44 272 a4 4 0 1 0 8 0 a4 4 0 1 0 -8 0z' fill='black'%3e%3c/path%3e%3cpath d='M172 16 a4 4 0 1 0 8 0 a4 4 0 1 0 -8 0zM44 48 a4 4 0 1 0 8 0 a4 4 0 1 0 -8 0z' fill='black'%3e%3c/path%3e%3cpath d='M140 304 a4 4 0 1 0 8 0 a4 4 0 1 0 -8 0zM204 400 a4 4 0 1 0 8 0 a4 4 0 1 0 -8 0z' fill='black'%3e%3c/path%3e%3cpath d='M172 112 a4 4 0 1 0 8 0 a4 4 0 1 0 -8 0zM204 16 a4 4 0 1 0 8 0 a4 4 0 1 0 -8 0z' fill='black'%3e%3c/path%3e%3cpath d='M140 112 a4 4 0 1 0 8 0 a4 4 0 1 0 -8 0zM44 112 a4 4 0 1 0 8 0 a4 4 0 1 0 -8 0z' fill='black'%3e%3c/path%3e%3cpath d='M204 272 a4 4 0 1 0 8 0 a4 4 0 1 0 -8 0zM44 144 a4 4 0 1 0 8 0 a4 4 0 1 0 -8 0z' fill='black'%3e%3c/path%3e%3cpath d='M108 240 a4 4 0 1 0 8 0 a4 4 0 1 0 -8 0zM204 304 a4 4 0 1 0 8 0 a4 4 0 1 0 -8 0z' fill='black'%3e%3c/path%3e%3cpath d='M140 16 a4 4 0 1 0 8 0 a4 4 0 1 0 -8 0zM76 16 a4 4 0 1 0 8 0 a4 4 0 1 0 -8 0z' fill='black'%3e%3c/path%3e%3cpath d='M204 176 a4 4 0 1 0 8 0 a4 4 0 1 0 -8 0zM108 144 a4 4 0 1 0 8 0 a4 4 0 1 0 -8 0z' fill='black'%3e%3c/path%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+    background-size: cover;
+}
+
+.right {
+    width: 220px;
+    height: 400px;
+    min-height: 100%;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='220' height='400' preserveAspectRatio='none' viewBox='0 0 220 400'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1080%26quot%3b)' fill='none'%3e%3crect width='220' height='400' x='0' y='0' fill='%230e2a47'%3e%3c/rect%3e%3cg transform='translate(-4.4%2c 0)' stroke-linecap='round'%3e%3cpath d='M20 79.89 L20 320.11' stroke-width='15' stroke='%233a7cc3'%3e%3c/path%3e%3cpath d='M40 81.11 L40 318.89' stroke-width='15' stroke='%233a7cc3'%3e%3c/path%3e%3cpath d='M60 90.19 L60 105.19' stroke-width='15' stroke='%233a7cc3'%3e%3c/path%3e%3cpath d='M60 127.69 L60 217.69' stroke-width='15' stroke='%233a7cc3'%3e%3c/path%3e%3cpath d='M60 240.19 L60 309.81' stroke-width='15' stroke='%233a7cc3'%3e%3c/path%3e%3cpath d='M80 48.72 L80 198.72' stroke-width='15' stroke='%233a7cc3'%3e%3c/path%3e%3cpath d='M80 221.22 L80 251.22' stroke-width='15' stroke='%233a7cc3'%3e%3c/path%3e%3cpath d='M80 273.72 L80 351.28' stroke-width='15' stroke='%233a7cc3'%3e%3c/path%3e%3cpath d='M100 179.63 L100 220.37' stroke-width='15' stroke='%233a7cc3'%3e%3c/path%3e%3cpath d='M120 139.57 L120 154.57' stroke-width='15' stroke='%233a7cc3'%3e%3c/path%3e%3cpath d='M120 177.07 L120 260.43' stroke-width='15' stroke='%233a7cc3'%3e%3c/path%3e%3cpath d='M140 180.07 L140 219.93' stroke-width='15' stroke='%233a7cc3'%3e%3c/path%3e%3cpath d='M160 44.94 L160 149.94' stroke-width='15' stroke='%233a7cc3'%3e%3c/path%3e%3cpath d='M160 172.44 L160 355.06' stroke-width='15' stroke='%233a7cc3'%3e%3c/path%3e%3cpath d='M180 24.85 L180 159.85' stroke-width='15' stroke='%233a7cc3'%3e%3c/path%3e%3cpath d='M180 182.35 L180 375.14' stroke-width='15' stroke='%233a7cc3'%3e%3c/path%3e%3cpath d='M200 102.78 L200 222.78' stroke-width='15' stroke='%233a7cc3'%3e%3c/path%3e%3cpath d='M200 245.28 L200 297.23' stroke-width='15' stroke='%233a7cc3'%3e%3c/path%3e%3c/g%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1080'%3e%3crect width='220' height='400' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+    background-size: cover;
+}
+
+input {
+    font-size:  16px; 
+    padding:  20px 0px; 
+    height:  56px; 
+    border:  none; 
+    border-bottom:  solid 1px rgba(0,0,0,.1); 
+    background:  #fff; 
+    min-width:  280px; 
+    box-sizing:  border-box; 
+    transition:  all .3s linear; 
+    color:  #000; 
+    font-weight:  400; 
+    -webkit-appearance:  none;
+}
+
+input:focus{
+    border-bottom:  solid 1px; 
+    outline: 0; 
+    box-shadow:  0 2px 6px -8px 
+}
+
+input[type="submit"] {
+    -webkit-appearance:  none; 
+  width:  auto;
+  min-width:  100px;
+  border-radius:  24px; 
+  text-align:  center; 
+  padding:  15px 40px;
+  margin-top:  5px; 
+  background-color:  rgb(65, 65, 158); 
+  color:  #fff; 
+  font-size:  14px;
+  margin-left:  auto; 
+  font-weight:  500; 
+  box-shadow:  0px 2px 6px -1px rgba(0,0,0,.13); 
+  border:  none;
+  transition:  all .3s ease; 
+  outline: 0; 
+}
+
+input[type="submit"]:hover{
+    transform:  translateY(-3px);
+}
+
+input[type="submit"]:active {
+    transform:  scale(.99);
+}
+
+.create-new-account{
+    padding-top: 1rem;
+    opacity: .65;
+}
+
+.create-new-account a {
+    color: rgb(24, 40, 185);
+    opacity: 1;
+}
+
+.control {
+    margin: 1rem 0;
+}
+
+.events-container {
+    display: grid;
+    grid-template-columns: minmax(150px, max-content) repeat(auto-fill, 200px) 20%;
+    padding-bottom: 2rem;
+    gap: 5px;
+}
+.event {
+    padding: 5px;
+    box-shadow: 5px 5px #39219745;
+    border-radius: 6px;
+}
+
+.event strong {
+    font-weight: 700;
+}
+.show-event {
+    padding-top: 5px;
+}

@@ -7,16 +7,13 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "style.css" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <% if flash.any? %>
-      <% flash.each do |type, msg|%>
-        <%= type %>
-        <%= msg %>
-      <% end %>
-    <% end %>
+    <%= render 'layouts/flash' %>
+    <%= render 'layouts/navbar' %>
     <%= yield %>
   </body>
 </html>

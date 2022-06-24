@@ -44,22 +44,21 @@ class EventsController < ApplicationController
   def destroy
     @event = Event.find(params[:id])
     @event.destroy
-    flash[:success] = 'Event deleted successfully.'
-    redirect_to root_path
+    redirect_to root_path, sucess: 'Event deleted successfully.'
   end
 
   def attend
     @event = Event.find(params[:id])
     @user = User.find(session[:user_id])
     @event.attendees << @user
-    redirect_to @event, notice: "Looks like you're now attending this event"
+    redirect_to @event, sucess: "Looks like you're now attending this event"
   end
 
   def leave
     @event = Event.find(params[:id])
     @user = User.find(session[:user_id])
     @event.attendees.delete(@user)
-    redirect_to @event, notice: 'You are no longer attending this event'
+    redirect_to @event, sucess: 'You are no longer attending this event'
   end
 
   private
