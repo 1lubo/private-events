@@ -1,0 +1,52 @@
+<div>    
+    <% if !session.keys.include?("user_id") %>
+        <%= link_to 'Log in', login_path %>
+    <% else %>
+        <%= link_to 'Log out', logout_path, data: {turbo_method: :destroy, turbo_confirm: "Are You sure?"} %>
+        <div>Logged in as: <%= link_to current_user.name, user_path(current_user) %></div>
+        
+    <% end %>
+</div>
+<h1>Events</h1>
+
+<div class="events-container">    
+    <% @events.each do |event| %>
+        <div class="event">
+            <div class="event-title">
+                <strong>Title: </strong>
+                <%= event.name %>
+            </div>
+            <div class="event-date">
+                <strong>Date: </strong>
+                <%= event.date %>
+            </div>
+            <div class="event-location">
+                <strong>Location: </strong>
+                <%= event.location %>
+            </div>
+            <div class="event-description">
+                <strong>Description: </strong>
+                <%= event.description %>
+            </div>
+            <div class="event-creator">
+                <strong>Organizer: </strong>
+                <%= link_to event.creator.name, user_path(event.creator) %>
+            </div>
+            <div class="event-attendees">
+                <strong>Attendees: </strong>
+                <% if !event.attendees.empty? %>
+                    <% event.attendees.each do |a| %>
+                        <%= a.name %>
+                    <% end %>
+                <% end %>
+            </div>
+            <div class="show-event">
+                <%= link_to 'Show Event', event_path(event) %>
+            </div>
+        </div>
+        
+    <% end %>
+</div>
+<div>
+    <%= link_to 'New event', new_event_path %>
+</div>
