@@ -10,7 +10,7 @@ A project completed as part of [The Odin Ruby on Rails Learning Track](https://w
 
 ---
 
-You can try this out [here]()
+You can try this out [here](https://desolate-shore-17186.herokuapp.com/)
 
 **HEADS UP:** Heroku server may need up to 30 sec to fire up a dyno. Be patient! :)
 You can use 'Mr. Orange', 'Mr. Blonde', 'Mr. Pink', 'Mr. White' or 'Mr. Brown' as test users to see full functionality.
