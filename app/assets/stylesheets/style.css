@@ -494,3 +494,7 @@ input[type="submit"]:active {
     display: flex;
     padding: 0.75rem 0 0.75rem 0;
   }
+
+  .attendee-card {
+    padding-right: 0.5rem;
+  }
