@@ -1,37 +1,67 @@
-
-<h1>Events</h1>
-
-<div class="events-container">    
-    <% @events.each do |event| %>
-        <div class="event">
-            <div class="event-title">
-                <strong>Title: </strong>
-                <%= event.name %>
-            </div>
-            <div class="event-date">
-                <strong>Date: </strong>
-                <%= event.date %>
-            </div>
-            <div class="event-location">
-                <strong>Location: </strong>
-                <%= event.location %>
-            </div>
-            <div class="event-description">
-                <strong>Description: </strong>
-                <%= event.description %>
-            </div>
-            <div class="event-creator">
-                <strong>Organizer: </strong>
-                <%= link_to event.creator.name, user_path(event.creator) %>
-            </div>
-            
-            <div class="show-event">
-                <%= link_to 'Show Event', event_path(event) %>
-            </div>
+<div class="top">
+    <div class="section-index">
+        <h2>Upcoming Events</h2>
+        <div class="events-container">
+            <% if @events.future.empty? %>
+                <div>No Upcoming Events </div>
+            <% else %>
+                <% @events.future.each do |event_future| %>
+                <div class="column is-3">
+                    <div class="card">
+                        <div class="card-title">
+                            <%= link_to event_future.name , event_path(event_future) %>
+                        </div>
+                        <div class="card-description">
+                            <div class="content">
+                                <%= event_future.description %>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="event-date">
+                                <%= event_future.date %>
+                            </div>
+                            <div class="event-location">
+                                <%= event_future.location %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% end %>
+            <% end %>
         </div>
-        
-    <% end %>
+    </div>
 </div>
-<div>
-    <%= link_to 'New event', new_event_path %>
+
+<div class="bottom">
+    <div class="section-index">
+        <h2>Past Events</h2>
+        <div class="events-container">
+            <% if @events.past.empty? %>
+                <div>No Past Events </div>
+            <% else %>
+                <% @events.past.each do |event_past| %>
+                <div class="column is-3">
+                    <div class="card">
+                        <div class="card-title">
+                            <%= link_to event_past.name , event_path(event_past) %>
+                        </div>
+                        <div class="card-description">
+                            <div class="content">
+                                <%= event_past.description %>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="event-date">
+                                <%= event_past.date %>
+                            </div>
+                            <div class="event-location">
+                                <%= event_past.location %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% end %>
+            <% end %>
+        </div>
+    </div>
 </div>

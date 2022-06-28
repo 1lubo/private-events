@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class EventsController < ApplicationController
+  before_action :require_login, only: %i[show]
   def index
     @events = Event.all
   end
@@ -44,21 +45,24 @@ class EventsController < ApplicationController
   def destroy
     @event = Event.find(params[:id])
     @event.destroy
-    redirect_to root_path, sucess: 'Event deleted successfully.'
+    flash[:success] = 'Event deleted successfully.'
+    redirect_to root_path, status: 303
   end
 
   def attend
     @event = Event.find(params[:id])
     @user = User.find(session[:user_id])
     @event.attendees << @user
-    redirect_to @event, sucess: "Looks like you're now attending this event"
+    flash[:success] = "Looks like you're now attending this event"
+    redirect_to @event
   end
 
   def leave
     @event = Event.find(params[:id])
     @user = User.find(session[:user_id])
     @event.attendees.delete(@user)
-    redirect_to @event, sucess: 'You are no longer attending this event'
+    flash[:notice] = 'You are no longer attending this event'
+    redirect_to @event
   end
 
   private

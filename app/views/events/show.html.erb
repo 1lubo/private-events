@@ -1,45 +1,64 @@
-<div class="container">
-    <div class="title">
-        <strong>Title: </strong>
-        <%= @event.name %>
-    </div>
-    <div class="date">
-        <strong>Date: </strong>
-        <%= @event.date %>
-    </div>
-    <div class="location">
-        <strong>Location: </strong>
-        <%= @event.location %>
-    </div>
-    <div class="description">
-        <strong>Description: </strong>
-        <%= @event.description %>
-    </div>
-    <div class="creator">
-        <strong>Organizer: </strong>
-        <%= @event.creator.name %>
-    </div>
-    <div class="attendees">
-        <strong>Attendees: </strong>
-        <% if !@event.attendees.empty? %>
-            <% @event.attendees.each do |a| %>
-                <%= a.name %>
-            <% end %>
-        <% end %>
+<div class="section">
+    <div class="show-event-container">
+        <div class="column">
+            <div class="title">
+                <h2><%= @event.name %></h2>
+            </div>
+            <div class="creator">
+                <p>Hosted by:</p>
+                <h4><%= @event.creator.name %></h4>
+            </div>
+            <div class="description">
+                <p><%= @event.description %></p>
+            </div>
+        
+            <div class="row-3">
+                <div class="show-column">
+                    <div class="card">
+                        <div class="card-header">
+                            <p class="card-title"><%= @event.date %></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="show-column">
+                    <div class="card">
+                        <div class="card-header">
+                            <p class="card-title"><%= @event.location %></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="attendees">
+                <strong>Attendees: </strong>
+                <% if !@event.attendees.empty? %>
+                    <% @event.attendees.each do |a| %>
+                        <%= a.name %>
+                    <% end %>
+                <% end %>
+            </div>
+            <div>
+
+                <div class="enrollment-button">
+                    <% if current_user != nil && !@event.attendees.include?(User.find(session[:user_id]))%>
+                        <%= link_to'Attend', attend_event_path(@event) %>
+                    <% else %>
+                        <%= link_to 'Leave', leave_event_path(@event) %>
+                    <% end %>
+                </div>
+                <br>
+                <div class="row-4">
+                    <% if current_user != nil && current_user.id == @event.creator_id %>
+                        <div class="options-button"><%= link_to 'Edit', edit_event_path(@event) %></div>
+                        <div class="options-button"><%= link_to 'Delete', event_path(@event), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></div>
+                    <% end %>
+                </div>
+                <br>     
+                       
+                <div class="back-button"><%= link_to 'Back', root_path %></div>
+            </div>
+        </div>
     </div>
 </div>
 
-<div>
-    <% if current_user != nil && current_user.id == @event.creator_id %>
-        <%= link_to 'Edit', edit_event_path(@event) %>
-        <%= link_to 'Delete', event_path(@event), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>        
-    <% end %>
-    
-    
-    <% if current_user != nil && !@event.attendees.include?(User.find(session[:user_id]))%>
-        <%= link_to'Attend', attend_event_path(@event) %>
-    <% else %>
-        <%= link_to 'Leave', leave_event_path(@event) %>
-    <% end %>
-    <%= link_to 'Back', root_path %>
-</div>

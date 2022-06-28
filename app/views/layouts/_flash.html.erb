@@ -1,5 +1,11 @@
-<% if flash.any? %>
-    <% flash.each do |type, msg|%>      
-        <div class="alert <%=type %>"><%= msg %></div>        
+<% if flash.any? %>        
+    <% flash.each do |type, msg|%>              
+        <% if flash[type].class == Array %>            
+            <% flash[type].each do |m| %>                
+                <div class="alert <%=type %>"><%= m %></div>        
+            <% end %>
+        <% else %>            
+            <div class="alert <%=type %>"><%= msg %></div>        
+        <% end %>
     <% end %>
 <% end %>

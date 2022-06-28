@@ -1,5 +1,17 @@
-<h1>Edit Article</h1>
-
-<%= render 'form', event: @event %>
-
-<%= link_to 'Back', root_path %>
+<div class="section">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-4">
+                <div class="title">
+                    <h2>Edit Event</h1>
+                </div>
+                
+                <%= render 'form', event: @event %>
+                
+                <div class="back-button-container">
+                    <div class="back-button"><%= link_to 'Back', root_path %></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,54 +1,45 @@
-<h1>Events created by <%= @user.name %></h1>
+<div class="section">
+    <div class="container profile">
+        <div class="columns is-centered">
+            <div class="column is-9">
+                <h2><%= @user.name %>'s Profile</h2>
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h3>Hosted Events: <%= @events.size%></h3>
+                        <% if @events.empty? %>
+                            <div>User currently doesn't have any created events </div>
+                        <% else %>
+                            <% @events.each do |event| %>
+                                <%= link_to event.name, event_path(event) %>
+                            <% end %>
+                        <% end %>
+                    </div>
+                    <div class="column has-text-centered">
+                        <h3>Upcoming Events: <%= @attended_events_future.size %></h3>
+                        <% if @attended_events_future.empty? %>
+                            <div>User doesn't have any planned events </div>
+                        <% else %>
+                            <% @attended_events_future.each do |future_event| %>
+                                <%= link_to future_event.name, event_path(future_event) %>
+                            <% end %>
+                        <% end %>
+                    </div>
 
-<% if @events.empty? %>
-    <div>User currently doesn't have any created events </div>
-<% else %>
-    <div class="events-container">
+                    <div class="column has-text-centered">
+                        <h3>Attended Events: <%= @attended_events_past.size %></h3>
+                        <% if @attended_events_past.empty? %>
+                            <div>User did not attend any events.</div>
+                        <% else %>
+                            <% @attended_events_past.each do |past_event| %>
+                                <%= link_to past_event.name, event_path(past_event) %>
+                            <% end %>
+                        <% end %>
+                    </div>
+                </div>              
+              
+                    
+            </div>
+        </div>   
         
-        <% @events.each do |e| %>
-        <div class="event">
-            <div class="title">
-                <strong>Title: </strong>
-                <%= e.name %>
-            </div>
-            <div class="date">
-                <strong>Date: </strong>
-                <%= e.date %>
-            </div>
-            <div class="location">
-                <strong>Location: </strong>
-                <%= e.location %>
-            </div>
-            
-            <div class="show-event">
-                <%= link_to 'Show Event', event_path(e) %>
-            </div>
-        </div>
-        
-        <% end %>
     </div>
-<% end %>
-
-<h1>Events attended by <%= @user.name %> </h1>
-
-<% if @user.attended_events.empty? %>
-    <div>User currently doesn't attend any events</div>
-<% else %>
-    <div class="events-container">
-        <% @user.attended_events.each do |ae|%>
-            <div class="event">
-                <div class="title">
-                    <%= ae.name %>
-                </div>
-                <div class="creator">
-                    <%= ae.creator.name %>
-                </div>
-                <div class="show-event">
-                    <%= link_to 'Show Event', event_path(ae) %>
-                </div>
-            </div>
-        <% end %>
-    </div>
-<% end %>
-
-<%= link_to 'Back', root_path%>
+</div>

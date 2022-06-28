@@ -1,0 +1,24 @@
+
+<div class="events-container">
+    <% @attended_events_past.each do |e| %>
+        <div class="event">
+            <div class="title">
+                <strong>Title: </strong>
+                <%= e.name %>
+            </div>
+            <div class="date">
+                <strong>Date: </strong>
+                <%= e.date %>
+            </div>
+            <div class="location">
+                <strong>Location: </strong>
+                <%= e.location %>
+            </div>
+            
+            <div class="show-event">
+                <%= link_to 'Show Event', event_path(e) %>
+            </div>
+        </div>
+        
+        <% end %>
+</div>

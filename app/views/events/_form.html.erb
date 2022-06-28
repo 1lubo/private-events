@@ -1,19 +1,33 @@
 <%= form_with model: event do |f| %>
     <div class="form-container">
-        <div class="event-name">
-            <%=f.text_field :name, placeholder: "Title" %>            
+        <div class="field">
+            <div class="control">
+                <%= f.label :name %>
+                <%=f.text_field :name %>
+            </div>
         </div>
-        <div class="event-date">
-            <%= f.date_field :date %>
+        <div class="field">
+            <div class="control">
+                <%= f.label :date %>
+                <%= f.date_field :date %>
+            </div>
         </div>
-        <div class="event-location">
-            <%= f.text_field :location, placeholder: "Location" %>
+        <div class="field">
+            <div class="control">
+                <%= f.label :location %>
+                <%= f.text_field :location %>
+            </div>
         </div>
-        <div class="event-description">
-            <%= f.text_field :description, placeholder: "Desciption" %>
+        <div class="field">
+            <div class="control">
+                <%= f.label :description %>
+                <%= f.text_field :description %>
+            </div>
         </div>
-        <div class="form-action">
-            <%= f.submit %>
+        <div class="field">
+            <div class="control">
+                <div class="submit-button-container"><%= f.submit %></div>
+            </div>
         </div>
     </div>
 <% end %>
