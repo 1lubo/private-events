@@ -9,9 +9,11 @@
                         <% if @events.empty? %>
                             <div>User currently doesn't have any created events </div>
                         <% else %>
-                            <% @events.each do |event| %>
-                                <%= link_to event.name, event_path(event) %>
-                            <% end %>
+                            <ul class="user-show-events-list">
+                                <% @events.each do |event| %>
+                                    <li><%= link_to event.name, event_path(event) %></li>
+                                <% end %>
+                            </ul>
                         <% end %>
                     </div>
                     <div class="column has-text-centered">

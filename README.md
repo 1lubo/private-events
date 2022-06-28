@@ -1,24 +1,16 @@
-# README
+# Project: Private Events
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## What's this
 
-Things you may want to cover:
+---
 
-* Ruby version
+A project completed as part of [The Odin Ruby on Rails Learning Track](https://www.theodinproject.com/lessons/ruby-on-rails-private-events) to dive into ActiveRecord’s associations. The project involves building a private website with similar functionality to the well known event organization and management platform [Eventbrite](https://www.eventbrite.com/).
 
-* System dependencies
+## Live Demo
 
-* Configuration
+---
 
-* Database creation
+You can try this out [here]()
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+**HEADS UP:** Heroku server may need up to 30 sec to fire up a dyno. Be patient! :)
+You can use 'Mr. Orange', 'Mr. Blonde', 'Mr. Pink', 'Mr. White' or 'Mr. Brown' as test users to see full functionality.

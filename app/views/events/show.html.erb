@@ -31,12 +31,16 @@
             </div>
         
             <div class="attendees">
-                <strong>Attendees: </strong>
-                <% if !@event.attendees.empty? %>
-                    <% @event.attendees.each do |a| %>
-                        <%= a.name %>
+                <h3>Attendees: <%= @event.attendees.size %></h3>
+                <div class="attendees-column">
+                    <% if @event.attendees.empty? %>
+                        <div>Nobody is attending this event.</div>
+                    <% else %>
+                        <% @event.attendees.each do |a| %>
+                            <div class="attendee card"><%= a.name %></div>
+                        <% end %>
                     <% end %>
-                <% end %>
+                </div>
             </div>
             <div>
 
